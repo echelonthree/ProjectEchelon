@@ -54,6 +54,10 @@ frame.Size = UDim2.new(0, 600, 0, 200)
 frame.Position = UDim2.new(0.5, -300, 0.5, -100)
 frame.BackgroundColor3 = Color3.fromRGB(50, 50, 50)
 frame.Parent = screenGui
+frame.CanvasSize = UDim2.new(0, 0, 2, 0)
+frame.ScrollBarThickness = 10
+
+
 local padding = Instance.new("UIPadding")
 padding.PaddingLeft = UDim.new(0, 10)
 padding.PaddingRight = UDim.new(0, 10)
@@ -63,24 +67,15 @@ padding.Parent = frame
 makeLabel("Echelon 3", frame)
 makeLabel("Teleport", frame).TextXAlignment = Enum.TextXAlignment.Left
 
-local scrollFrame = Instance.new("ScrollingFrame")
-scrollFrame.Size = UDim2.new(0, 300, 0, 400)
-scrollFrame.Position = UDim2.new(0.5, -150, 0.5, -200)
-scrollFrame.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-scrollFrame.ScrollBarThickness = 10
-scrollFrame.Parent = frame
-
--- Create a UIListLayout for buttons
 local layout = Instance.new("UIListLayout")
-layout.Parent = scrollFrame
-layout.Padding = UDim.new(0, 10)
+layout.Parent = frame
 
 -- Add buttons to the scroll frame
 for i = 1, 10 do
     local button = Instance.new("TextButton")
-    button.Size = UDim2.new(0, 250, 0, 50)
+    button.Size = UDim2.new(0, 250, 0, 20)
     button.Text = "Button " .. i
-    button.BackgroundColor3 = Color3.fromRGB(0, 128, 255)
+    button.BackgroundColor3 = Color3.fromRGB(70, 70, 70)
     button.TextColor3 = Color3.fromRGB(255, 255, 255)
-    button.Parent = scrollFrame
+    button.Parent = frame
 end
