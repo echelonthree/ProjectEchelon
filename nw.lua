@@ -54,8 +54,12 @@ frame.Size = UDim2.new(0, 600, 0, 200)
 frame.Position = UDim2.new(0.5, -300, 0.5, -100)
 frame.BackgroundColor3 = Color3.fromRGB(50, 50, 50)
 frame.Parent = screenGui
-frame.Padding = UDim.new(0, 10)
-
+local padding = Instance.new("UIPadding")
+padding.PaddingLeft = UDim.new(0, 10)
+padding.PaddingRight = UDim.new(0, 10)
+padding.PaddingTop = UDim.new(0, 10)
+padding.PaddingBottom = UDim.new(0, 10)
+padding.Parent = frame
 makeLabel("Echelon 3", frame)
 makeLabel("Teleport", frame).TextXAlignment = Enum.TextXAlignment.Left
 
